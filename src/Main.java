@@ -94,7 +94,7 @@ public class Main extends Application
                 lastNanoTime.value = currentNanoTime;
                 
                 // game logic
-                
+               
                 briefcase.setVelocity(0,0);
                 if (input.contains("LEFT"))
                     briefcase.addVelocity(-180,0);
@@ -104,7 +104,9 @@ public class Main extends Application
                     briefcase.addVelocity(0,-150);
                 if (input.contains("DOWN"))
                     briefcase.addVelocity(0,150);
-                    
+                if (input.contains("SPACE"))
+                	briefcase.shoot();
+                    briefcase.bullet.addVelocity(0, -250);      
                 briefcase.update(elapsedTime);
                 
                 // collision detection
@@ -128,7 +130,7 @@ public class Main extends Application
                 
                 gc.clearRect(0, 0, 512,800);
                 briefcase.render( gc );
-                
+             
                 for (Enemy moneybag : enemyList )
                     moneybag.render( gc );
 

@@ -5,13 +5,15 @@ import javafx.geometry.Rectangle2D;
 public class Sprite
 {
     private Image image;
-    private double positionX;
-    private double positionY;    
-    private double velocityX;
-    private double velocityY;
+    protected double positionX;
+    protected double positionY;    
+    protected double velocityX;
+    protected double velocityY;
+    protected GraphicsContext gc;
     private double width;
     private double height;
     private boolean status;
+    private boolean shoott;
     public Sprite()
     {
         positionX = 0;
@@ -37,6 +39,9 @@ public class Sprite
         setImage(i);
     	}
     }
+    public Image getImage() {
+    	return image;
+    }
 
     public void setPosition(double x, double y)
     {
@@ -48,6 +53,12 @@ public class Sprite
     {
         velocityX = x;
         velocityY = y;
+    }
+    public double getVelocityX() {
+    	return velocityX;
+    }
+    public double getVelocityY() {
+    	return velocityY;
     }
     public double getPositionX() {
     	return positionX;
@@ -65,14 +76,13 @@ public class Sprite
     {
         positionX += velocityX * time;
         positionY += velocityY * time;
-        if(!this.getStatus()) {
-        	this.clear();
-        }
+      
     }
 
     public void render(GraphicsContext gc)
     {
         gc.drawImage( image, positionX, positionY );
+        
     }
 
     public Rectangle2D getBoundary()
@@ -96,5 +106,5 @@ public class Sprite
     public void clear() {
     	image=null;
     }
-  
+
 }
