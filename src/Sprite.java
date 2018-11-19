@@ -34,8 +34,9 @@ public class Sprite
     {	if(filename == "mine.png") {
         Image i = new Image(filename,50,50,false,false);
         setImage(i);
+        
     }else {
-        Image i = new Image(filename,80,120,false,false);
+        Image i = new Image(filename,10,10,false,false);
         setImage(i);
     	}
     }

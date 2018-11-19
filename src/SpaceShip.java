@@ -14,7 +14,7 @@ public class SpaceShip extends Sprite implements Shoot{
 	
 	@Override
 	public void shoot() {
-        Image i = new Image("fireball.png",50,50,false,false);
+        Image i = new Image("fireball.png",20,20,false,false);
 		bullet.setImage(i);
 		bullet.setPosition(this.getPositionX(), this.getPositionY());
 		bullet.setVelocity(0, 0);
@@ -26,7 +26,7 @@ public class SpaceShip extends Sprite implements Shoot{
     {
         positionX += velocityX * time;
         positionY += velocityY * time;
-        bullet.positionY+=bullet.getVelocityY()*time;
+        bullet.positionY+=bullet.getVelocityY()*time/10;
       
     }
 	@Override

@@ -115,7 +115,7 @@ public class Main extends Application
                 while ( moneybagIter.hasNext() )
                 {
                     Enemy moneybag = moneybagIter.next();
-                    if ( briefcase.intersects(moneybag) )
+                    if ( briefcase.bullet.intersects(moneybag) )
                     {
                         moneybagIter.remove();
                         score.value++;
